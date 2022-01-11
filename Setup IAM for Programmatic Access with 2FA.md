@@ -26,7 +26,7 @@
            {
                "Effect": "Allow",
                "Action": "sts:AssumeRole",
-               "Resource": "arn:aws:iam::xxxxxxx:role/u-role-prog-access-developer",
+               "Resource": "arn:aws:iam::XXXXXXXXX:role/u-role-prog-access-developer",
                "Condition": {
                    "BoolIfExists": {
                        "aws:MultiFactorAuthPresent": "true"
@@ -49,11 +49,11 @@
 
    ```
    [capdev]
-   aws_access_key_id = AKIAUOFXIF3X76CNP3B2
-   aws_secret_access_key = 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
+   aws_access_key_id = XXXXXXXXX
+   aws_secret_access_key = XXXXXXXXX
    source_profile = capdev
-   mfa_serial = arn:aws:iam::xxxxx:mfa/qinjie-capdev
-   role_arn = arn:aws:iam::xxxxx:role/u-role-prog-access-developer
+   mfa_serial = arn:aws:iam::XXXXXXXXX:mfa/qinjie-capdev
+   role_arn = arn:aws:iam::XXXXXXXXX:role/u-role-prog-access-developer
    ```
 
    
