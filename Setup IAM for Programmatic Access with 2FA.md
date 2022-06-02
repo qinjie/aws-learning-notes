@@ -2,7 +2,7 @@
 
 
 
-## Create User in AWS Console
+## Create Developer User in AWS Console
 
 
 
@@ -15,7 +15,7 @@
 
    * Add minimal access rights
 
-   ![image-20220110174541640](https://raw.githubusercontent.com/qinjie/picgo-images/main/image-20220110174541640.png)
+   ![image-20220421150600740](https://raw.githubusercontent.com/qinjie/picgo-images/main/image-20220421150600740.png)
 
 2. Create a policy `u-iam-policy-prog-access-developer` to resume above role `u-role-prog-access-developer`.
 
@@ -41,6 +41,8 @@
 
 4. Create user, e.g. `qinjie-capdev`, and add user to above group.
 
+
+
 ## Configure CLI Profile
 
 1. Setup profile a profile `capdev` (or any other name) using `aws configure`.
@@ -49,11 +51,19 @@
 
    ```
    [capdev]
-   aws_access_key_id = XXXXXXXXX
-   aws_secret_access_key = XXXXXXXXX
+   aws_access_key_id = <ACCESS KEY_I
+   aws_secret_access_key = <SECRET_ACCESS_KEY>
    source_profile = capdev
-   mfa_serial = arn:aws:iam::XXXXXXXXX:mfa/qinjie-capdev
-   role_arn = arn:aws:iam::XXXXXXXXX:role/u-role-prog-access-developer
+   mfa_serial = arn:aws:iam::<AWS_ACCOUNT_ID>:mfa/qinjie-capdev
+   role_arn = arn:aws:iam::<AWS_ACCOUNT_ID>:role/u-role-prog-access-developer
+   ```
+
+3. In `~/.aws/config`, it should be:
+
+   ```
+   [profile capdev]
+   region = ap-southeast-1
+   output = json
    ```
 
    
